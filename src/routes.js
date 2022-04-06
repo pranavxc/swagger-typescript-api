@@ -611,7 +611,7 @@ const parseRoutes = ({
             pathArgsSchemas: routeParams.path,
             queryObjectSchema,
             extractRequestParams,
-            routeName,
+            routeName: ( rawRouteInfo.tags && rawRouteInfo.tags.length ? `${rawRouteInfo.tags[0].toLowerCase().replace(/\W+/g,'-' )}-`: '' ) + routeName
           });
 
           const queryType = routeParams.query.length
